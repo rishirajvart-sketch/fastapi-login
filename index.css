@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+html,
+body,
+#root {
+    min-height: 100%;
+    margin: 0;
+}
+
+#root {
+    min-height: 100vh;
+    display: grid;
+    /* place-items: center; */
+}
+
+body{
+    /* background: linear-gradient(rgb(6, 2, 55),rgb(1, 7, 30)); */
+    Background-color: #f7f6f8;
+    font-family:sans-serif;
+    text-align: center;
+}

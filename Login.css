@@ -1,0 +1,473 @@
+/* .signup-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.signup-card {
+    display: flex;
+    background: lightsteelblue;
+    color: white;
+    border: 1px solid lightsteelblue;
+    border-radius: 10px;
+    width: 210px;
+    height: 400px;
+   
+}
+
+.input {
+    border-style: hidden;
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+   color: white;
+   text-align: center;
+}
+
+button{
+    margin: 4px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: none;
+    background: linear-gradient(pink,rgb(64, 0, 128));
+    
+}
+
+.signin-button {
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* # its logincss */
+
+/* .login-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    background: lightsteelblue;
+    color: white;
+    border: 1px solid lightsteelblue;
+    border-radius: 10px;
+    height: 600px;
+    width: 1000px;
+    display: flex;
+}
+
+.input {
+
+    margin: 8px;
+    margin-bottom: 18px;
+    border-radius: 5px;
+    border-style: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 750px;
+}
+
+h1{
+   color:white;
+   margin-left: 750px;
+}
+
+button{
+    margin: 4px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: lightskyblue;
+    margin-left: 750px;
+}  */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  background: linear-gradient(135deg, #fbfafa, #015f95);
+}
+
+.login-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  color: #fff;
+  background: #333;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-toast.error {
+  top: 24px;
+  bottom: auto;
+  background: #a32132;
+}
+
+.login-toast.success {
+  top: 24px;
+  right: 24px;
+  bottom: auto;
+  left: auto;
+  background: #247449;
+  transform: none;
+}
+
+.login-toast button {
+  width: auto;
+  margin: 0;
+  padding: 0 4px;
+  color: inherit;
+  background: transparent;
+  font-size: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  /* border-radius: 10px; */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  
+}
+
+
+.welcome-side {
+  min-width: 0;
+  background-image: url('F:\Rishi Restframework Djando\FastAPI\LearnFastAPI\Reactjs\Shop-app\public\Gemini_Generated_Image_l1roc1l1roc1l1ro.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: flex;
+}
+
+
+.welcome-overlay {
+  width: 100%;
+  height: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  color: linen;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-overlay h2 {
+  font-size: 46px;
+  margin-bottom: 400px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgb(81, 168, 249);
+}
+
+:hover .welcome-overlay h2{
+  transform: rotateX(0deg);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.welcome-overlay p {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 320px;
+  color: #ffffff;
+}
+
+/* right*/
+.form-side {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00031e;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.card h1 {
+  color: #6c5ce7;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.signup-choice-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.gender-options {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 0;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  border: 1px solid #6c5ce7;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.gender-options legend {
+  padding: 0 6px;
+  color: #fff;
+  font-size: 13px;
+  text-align:left;
+}
+
+.gender-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.gender-options input[type="radio"] {
+  accent-color: #7c5cfc;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 14px;
+  border: none;
+  background-color: #f0f2fb;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: inline;
+  width: 100%;
+}
+
+.password-input-wrapper .input {
+  padding-right: 48px;
+}
+
+.password-visibility-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.password-visibility-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.input:focus {
+  background-color: #e4e8f8;
+}
+
+button[type="submit"], .signin-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #7c5cfc, #ff7b92);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(124, 92, 252, 0.3);
+}
+
+button[type="submit"]:hover, .signin-button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+p {
+  font-size: 13px;
+  color: #666;
+}
+
+p span {
+  color: #451af0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+p span:hover {
+  text-decoration: underline;
+}
+
+.username{
+  font-size: 17px;
+  color:white;
+  text-align:left;
+  
+}
+
+.password-input-wrapper{
+  font-size: 17px;
+  color:white;
+  text-align:left;
+
+}
+
+.login-form .login-field-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.login-form .login-field-label {
+  display: block;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+}
+
+.login-form .login-field-row > .input,
+.login-form .login-field-row .password-input-wrapper .input {
+  margin: 0;
+}
+
+.login-form .login-field-row .password-input-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: inherit;
+}
+
+@media (max-width: 420px) {
+  .login-form .login-field-row {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+
+.signup-form .input-group {
+  width: 100%;
+}
+
+.signup-form .signup-field-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.signup-form .signup-field-row > .input,
+.signup-form .signup-field-row .password-input-wrapper .input {
+  min-width: 0;
+  margin: 0;
+}
+
+.signup-form .signup-field-row .password-input-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: inherit;
+}
+
+.signup-form .signup-field-row .login-field-label {
+  color: #fff;
+  text-align: left;
+}
+
+.signup-form .gender-options {
+  flex-wrap: wrap;
+  padding: 8px;
+}
+
+.signup-form .gender-options label {
+  gap: 4px;
+  font-size: 13px;
+}
+
+@media (max-width: 420px) {
+  .signup-form .signup-field-row {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 680px) {
+  .card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .welcome-side {
+    min-height: 35vh;
+  }
+
+  .form-side {
+    min-height: 65vh;
+  }
+}
